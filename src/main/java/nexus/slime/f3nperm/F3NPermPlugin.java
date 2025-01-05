@@ -119,7 +119,11 @@ public final class F3NPermPlugin extends JavaPlugin implements Listener {
         }
 
         // Just use the latest provider when we can't find a suitable one;
-        if (bukkitVersion == null || bukkitVersion.isGreaterOrEqualTo(BukkitVersion.V1_20_5)) {
+        if (bukkitVersion == null || bukkitVersion.isGreaterOrEqualTo(BukkitVersion.V1_21_3)) {
+            return new ReflectionProvider_1_21_3();
+        }
+
+        if (bukkitVersion.isGreaterOrEqualTo(BukkitVersion.V1_20_5)) {
             return new ReflectionProvider_1_20_5();
         }
 
